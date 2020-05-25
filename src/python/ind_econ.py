@@ -63,10 +63,24 @@ def ind_econ_b3(date = "2020-05-22",connection= connection):
                     index = False)
 
 
+
+#O script já acrescenta valores novos
+
 #ind_econ_b3(date = "2020-05-22",connection= connection)
 
 hoje = datetime.date.today()
-inicio = datetime.datetime.strptime("1999-09-30", '%Y-%m-%d')
+#inicio = datetime.datetime.strptime("1999-09-30", '%Y-%m-%d')
+
+with open( os.path.join(SQL_DIR, 'max_date.sql') ) as query_file:
+    query = query_file.read()
+
+df = pd.read_sql_query( query,
+                        connection
+)
+
+inicio = df.values.tolist()[0][0]
+inicio = datetime.datetime.strptime(inicio, '%Y-%m-%d') + datetime.timedelta(days=1) 
+
 datas = pd.date_range(start= inicio,end=hoje)
 datas = datas.sort_values(ascending = False).astype(str)
 total = len(datas)
@@ -80,4 +94,4 @@ for i in range(0,total):
         #time.sleep(1)
     except:
         #print("não tem valores nesta data: {}".format(date))
-        print(i, "de", total, datas[i])
+        print(i, "de", total, datas[i], "N")
