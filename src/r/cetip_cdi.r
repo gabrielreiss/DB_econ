@@ -25,6 +25,7 @@ gerar_cdi <- function(inicio = as.Date("2012-08-20"),
     #gerar df com os valores
     df_cdi = data.frame()
     total = length(datas)
+    #podia transformar em lista, e fazer apply da lista
     for( i in 1:total){
         dt = datas[i]
         cdi = cetip_cdi(dt)
