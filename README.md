@@ -29,6 +29,6 @@ python src/python/titulos_publicos.py -start "2003-01-01" -end "2003-12-01"
 ```
 ### Referências:
 
-[Construindo uma Base de Dados Econômico-Financeiros (COVID-19 Free)](https://financial-risk-academy.teachable.com/)
+[Construindo uma Base de Dados Econômico-Financeiros em R (COVID-19 Free)](https://financial-risk-academy.teachable.com/)
 
 [Canal Ricos pelo Acaso](https://www.youtube.com/channel/UCzCrdOO2GLYVnNhZUvG03lg/featured)
