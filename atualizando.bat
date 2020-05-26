@@ -1,0 +1,1 @@
+python src/python/titulos_publicos.py
